@@ -34,8 +34,3 @@ function getSelectedValue(id){
     console.log(selectedValue);
 
 }
-function valueTest(){
-
-    console.log(document.getElementById("customRange2").value);
-    document.getElementById("hello").innerText = document.getElementById("customRange2").value
-}
