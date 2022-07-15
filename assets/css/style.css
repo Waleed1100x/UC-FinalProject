@@ -87,3 +87,28 @@
   cursor: pointer;
 }
 /* end of search bar  */
+/* Slider  */
+.sliderContiner{
+  
+  margin-top: 20px;
+}
+.form-range{
+  width: 50%;
+margin-left: 20px ;
+}
+.form-range:after{
+  color: black;
+  font-size: 100;
+  content: '100';
+  left: 53%;
+}
+.form-range::before{
+  color: black;
+  font-size: 100;
+  content: '0';
+  left: 100%;
+}
+.searchOptions{
+  margin: 30px;
+padding: 250px;
+}
