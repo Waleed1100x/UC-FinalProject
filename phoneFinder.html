@@ -2,12 +2,13 @@
 <html lang="en">
 <head> 
     <title>Mobile Zone</title>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="./assets/css/style.css"> 
-   
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        
 </head>
 <body>
    <!-- Navbar  -->
@@ -29,40 +30,57 @@
             <a class="nav-link active" href="./news.html">News</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="./Brands.html">Brands</a>
+            <a class="nav-link active" href="./brandNews.html">Brand News</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <!-- Navbar end  -->
-  <!-- Search options  -->
-<div class="searchOptions">
-  <!-- brand menu   -->
-  <h5>Brand</h5>
-  <select class="form-select" aria-label="Default select example" id="brandMenu" onchange="getSelectedValue(id)">
-    <option selected>Open this select menu</option>
-    </select>
-    <!-- end of brand menu  -->
+  
 
-    <!-- Connectivity menu  -->
-    <h5>Connectivity</h5>
-  <select class="form-select" aria-label="Default select example" id="Connectivity" onchange="getSelectedValue(id)">
-    <option selected>Open this select menu</option>
-    </select>
-    <!-- end Connectivity menu  -->
 
-    <!-- Slider for battery range   -->
-    <div class="sliderContiner">
-        <h5>Battery Range</h5>
-        <label for="customRange2" class="form-label">Max</label><br>
-        <input type="range" class="form-range" min="0" max="5" id="customRange2">
+ <!-- search bar  -->
+ <div class="wrapper">
+  <div class="search-input">
+    <a href="" target="_blank" hidden></a>
+    <input type="text" placeholder="Type to search..">
+    <div class="autocom-box">
+      <!-- here list are inserted from javascript -->
     </div>
-    <div class="sliderContiner">
-        <label for="customRange2" class="form-label">min</label><br>
-        <input type="range" class="form-range" min="0" max="5" id="customRange2">
-    </div>
+    <div class="icon"><i class="fas fa-search"></i></div>
+  </div>
 </div>
+<!-- end of searh bar -->
+<!-- Table  -->
+<div id='Phonee'>
+  <table class="table" style="text-align:center;">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+       
+      </tr>
+    </thead>
+    <tbody id="table-group-divider">
+    </tbody>
+  </table>
+</div>
+
+<!-- end of Table  -->
+<h4 id="reviewTitle " style="text-align:center;margin-top:30px;">News about the phone</h4>
+
+   <!-- News  -->
+<div>
+  <div class="row" id="newstype">
+      
+  </div>
+ <div class="row" id="newdetails">
+
+ </div> 
+</div>
+<!-- end of News  -->
 
 
   <script src="./assets/js/phone.js"></script>

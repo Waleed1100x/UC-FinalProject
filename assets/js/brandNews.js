@@ -3,7 +3,6 @@ const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
 let linkTag = searchWrapper.querySelector("a");
-let webLink;
 const printphone = document.getElementById('Phonee');
 let ComparePhones = [];
 
@@ -15,15 +14,15 @@ inputBox.onkeyup = (e)=>{
         icon.onclick = ()=>{
             buildTable(userData.toLocaleLowerCase());
         }
-        emptyArray = phone.filter((data)=>{
+        emptyArray = brands.filter((data)=>{
             //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
         
-            return data.name.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+            return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
         });
         emptyArray = emptyArray.map((data)=>{
             // passing return data inside li tag
            
-            return  `<li>${data.name}</li>`;
+            return  `<li>${data}</li>`;
         });
         searchWrapper.classList.add("active"); //show autocomplete box
         showSuggestions(emptyArray); 
@@ -60,76 +59,7 @@ function showSuggestions(list){
 
 
 
-
-
-
-
-// buildTable function start  
-function buildTable(search){
-
-    let s = `${search}`;
-let table = document.getElementById("table-group-divider");
-
-    for(var i = 0; i< phone.length ; i++){
-        if(phone[i].name.toLocaleLowerCase().trim()== s.toLocaleLowerCase().trim() ){
-        ComparePhones.push(phone[i]);
-        let j = 0;
-        if(ComparePhones.length == 2){
-    
-        } else {
-            var row = `
-            <tr>
-            <th scope="col"></th>
-            <th scope="col"><img src="./assets/img/${ComparePhones[j].name}.jpg" alt=""></th>
-           </tr>
-            <tr>
-            <th scope="col">Brand</th>
-            <th scope="col">${ComparePhones[j].brand}</th>
-            </tr>
-            <tr> 
-            <th scope="col">Name</th>
-            <td>${ComparePhones[j].name}</td>
-            </tr>
-            <tr> 
-            <th scope="col">Released</th>
-            <td>${ComparePhones[j].Released}</td>
-            </tr>
-            <th scope="col">Connectivity</th>
-            <td>${ComparePhones[j].Connectivity}</td>
-            </tr>
-            <tr> 
-            <th scope="col">Size</th>
-            <td>${ComparePhones[j].Size}</td>
-            </tr>
-            <tr> 
-            <th scope="col">Memory</th>
-            <td>${ComparePhones[j].Memory}</td>
-            </tr>
-            <tr> 
-            <th scope="col">Resolution</th>
-            <td>${ComparePhones[j].Resolution}</td>
-            </tr>
-            <tr> 
-            <th scope="col">Battery</th>
-            <td>${ComparePhones[j].Battery} mAh</td>
-
-            </tr>
-        
-            `
-            fetchPhoneNews(ComparePhones[j].name);
-            ComparePhones = [];
-            table.innerHTML = "";
-            table.innerHTML += row;
-        }
-
-        
-        }}
-    }
-    // end of buildTable 
-
-
-    // start of news 
-    //APIS
+// News 
 const API_KEY = "ccd468e609094c18b054a6205515443b";
 const newstype = document.getElementById("newstype");
 const newsdetails = document.getElementById("newdetails");
@@ -207,3 +137,9 @@ function displayNews(){
         newsdetails.appendChild(col);
     });
 }
+
+
+
+function buildTable(search){
+    fetchPhoneNews(search);
+    }

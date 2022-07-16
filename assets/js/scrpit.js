@@ -63,7 +63,7 @@ function buildTable(search){
 let table = document.getElementById("table-group-divider");
 
     for(var i = 0; i< phone.length ; i++){
-        if(phone[i].name.toLocaleLowerCase()== s.toLocaleLowerCase()){
+        if(phone[i].name.toLocaleLowerCase().trim()== s.toLocaleLowerCase().trim() ){
         ComparePhones.push(phone[i]);
         let j = 0;
         if(ComparePhones.length == 2){
