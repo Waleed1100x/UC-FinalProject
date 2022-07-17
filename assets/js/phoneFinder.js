@@ -147,7 +147,7 @@ const fetchPhoneNews = async (phone) => {
         newsdetails.innerHTML = "<h5>No data found.</h5>"
         return;
     }
-
+   
     displayNews();
 }
 function displayNews(){
